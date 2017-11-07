@@ -6,6 +6,8 @@ A program for generating code sequences ("program synthesis") in a specified Ins
 
 The program is an expanded version of the approach outlined by Dennis Yurichev in section 8.1 of [Quick introduction into SAT/SMT solvers and symbolic execution](https://yurichev.com/writings/SAT_SMT_draft-EN.pdf). I think that gives a good overview of how the program works so I won't repeat it here.
 
+One use of this type of program is generate code sequences which may not be entirely obvious otherwise. [Dave Thomas's article on generating branchless sequences](http://www.davespace.co.uk/blog/20150131-branchless-sequences.html) is a good starting point.
+
 ## Using the program
 
 In `codegen.c` there is a function `ValueType TargetFunc(const ValueType x)` which is used to drive the generation. The program will generate random inputs and then call the function to get the corresponding output. These values are then used to drive the generation "chains" as described in Dennis's paper. 
